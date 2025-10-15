@@ -55,61 +55,100 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="2"
-                android:padding="16dp"
-                android:rowCount="2">
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp">
 
-                <TextView
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:text="Accuracy :"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="16sp" />
-                <TextView
-                    android:layout_gravity="end"
-                    android:text="80%"
-                    android:textColor="@color/text_primary"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical"
+                    android:paddingVertical="8dp">
 
-                <TextView
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Accuracy :"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="80%"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:text="Loss :"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="16sp" />
-                <TextView
-                    android:layout_gravity="end"
-                    android:text="0.15"
-                    android:textColor="@color/text_primary"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical"
+                    android:paddingVertical="8dp">
 
-                <TextView
-                    android:layout_marginTop="16dp"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Loss :"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.15"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:text="Arch :"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="16sp" />
-                <TextView
-                    android:layout_gravity="end"
-                    android:layout_marginTop="16dp"
-                    android:text="ResNet-18"
-                    android:textColor="@color/text_primary"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical"
+                    android:paddingVertical="8dp">
 
-                <TextView
-                    android:layout_marginTop="16dp"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Arch :"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ResNet-18"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:text="Last training :"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="16sp" />
-                <TextView
-                    android:layout_gravity="end"
-                    android:layout_marginTop="16dp"
-                    android:text="18 Otk 2025"
-                    android:textColor="@color/text_primary"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical"
+                    android:paddingVertical="8dp">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last training :"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25 Sep 2025"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </GridLayout>
         </androidx.cardview.widget.CardView>
 

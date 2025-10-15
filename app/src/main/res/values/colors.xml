@@ -10,6 +10,6 @@
 
     <color name="text_primary">#212121</color>
     <color name="text_secondary">#757575</color>
-
+    <color name="divider_gray">#E0E0E0</color>
     <color name="button_red_soft">#E57373</color>
 </resources>
