@@ -1,20 +1,37 @@
 package com.tpi.wasterecognition
 
+import android.net.Uri
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
+import com.tpi.wasterecognition.databinding.ActivityPredictBinding
 
 class PredictActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityPredictBinding
+
+    private val galleryLauncher = registerForActivityResult(
+        ActivityResultContracts.GetContent()
+    ) { uri: Uri? ->
+        uri?.let {
+            Glide.with(this)
+                .load(it)
+                .into(binding.ivWasteImage)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_predict)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding = ActivityPredictBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnInput.setOnClickListener {
+            openGallery()
         }
+    }
+
+    private fun openGallery() {
+        galleryLauncher.launch("image/*")
     }
 }
