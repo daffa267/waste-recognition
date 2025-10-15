@@ -2,9 +2,14 @@ package com.tpi.wasterecognition
 
 import android.net.Uri
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.tpi.wasterecognition.databinding.ActivityPredictBinding
 
 class PredictActivity : AppCompatActivity() {
@@ -29,9 +34,47 @@ class PredictActivity : AppCompatActivity() {
         binding.btnInput.setOnClickListener {
             openGallery()
         }
+
+        binding.btnCorrect.setOnClickListener {
+            showChooseLabelDialog()
+        }
+        binding.btnWrong.setOnClickListener {
+            showChooseLabelDialog()
+        }
     }
 
     private fun openGallery() {
         galleryLauncher.launch("image/*")
+    }
+
+    private fun showChooseLabelDialog() {
+        val builder = MaterialAlertDialogBuilder(this)
+        val dialogView = layoutInflater.inflate(R.layout.choose_label, null)
+        builder.setView(dialogView)
+
+        val autoCompleteTextView = dialogView.findViewById<AutoCompleteTextView>(R.id.auto_complete_text_view)
+        val btnSave = dialogView.findViewById<MaterialButton>(R.id.btn_dialog_save)
+        val btnCancel = dialogView.findViewById<MaterialButton>(R.id.btn_dialog_cancel)
+
+        val labels = resources.getStringArray(R.array.waste_labels)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, labels)
+        autoCompleteTextView.setAdapter(adapter)
+
+        val dialog = builder.create()
+        dialog.show()
+
+        btnCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        btnSave.setOnClickListener {
+            val selectedLabel = autoCompleteTextView.text.toString()
+            if (selectedLabel.isNotEmpty()) {
+                Toast.makeText(this, "Label saved: $selectedLabel", Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
+            } else {
+                Toast.makeText(this, "Please select a label", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
