@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="app_background">#FAF9F9</color>
+    <color name="card_background">#F0F0F0</color> <color name="light_teal">#ADD2C9</color>
+    <color name="medium_teal">#5EA3A3</color>
+    <color name="dark_teal">#488B8F</color>
+
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+
+    <color name="button_red_soft">#E57373</color>
+</resources>

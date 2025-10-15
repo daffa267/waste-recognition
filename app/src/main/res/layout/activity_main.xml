@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/waste"
+            app:tint="@color/dark_teal" />
+
+        <TextView
+            android:id="@+id/tv_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Waste Rec"
+            android:textColor="@color/text_primary"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_model_statistic_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Model Statistic :"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:padding="16dp"
+                android:rowCount="2">
+
+                <TextView
+                    android:layout_columnWeight="1"
+                    android:text="Accuracy :"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_gravity="end"
+                    android:text="80%"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="1"
+                    android:text="Loss :"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_gravity="end"
+                    android:text="0.15"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_marginTop="16dp"
+                    android:layout_columnWeight="1"
+                    android:text="Arch :"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:text="ResNet-18"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_marginTop="16dp"
+                    android:layout_columnWeight="1"
+                    android:text="Last training :"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:text="18 Otk 2025"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </GridLayout>
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start_predict"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Start Predict"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/medium_teal"
+            app:cornerRadius="12dp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/app_background"
+        app:itemIconSize="30dp"
+        app:itemPaddingTop="8dp"
+        app:itemPaddingBottom="4dp"
+        app:itemIconTint="@color/dark_teal"
+        app:itemTextColor="@color/dark_teal"
+        app:menu="@menu/bottom_nav_menu" />
+</RelativeLayout>
