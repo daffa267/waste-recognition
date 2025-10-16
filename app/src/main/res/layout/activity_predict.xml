@@ -14,16 +14,16 @@
         android:id="@+id/tv_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+
+        android:layout_marginTop="40dp"
+
         android:drawableRight="@drawable/waste"
         android:drawablePadding="8dp"
         android:text="WasteRec"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
-
         android:drawableTint="@color/dark_teal"
-
         app:layout_constraintEnd_toEndOf="@id/card_image"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/tin"
+            android:src="@drawable/pict"
             tools:ignore="ContentDescription" />
     </androidx.cardview.widget.CardView>
 
@@ -158,7 +158,7 @@
         android:textAllCaps="false"
         android:textColor="@color/text_primary"
         android:textStyle="bold"
-        app:backgroundTint="@color/light_teal"
+        app:backgroundTint="@color/medium_teal"
         app:cornerRadius="8dp"
         app:layout_constraintEnd_toStartOf="@+id/btn_wrong"
         app:layout_constraintStart_toStartOf="@id/card_image"
