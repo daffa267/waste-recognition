@@ -5,15 +5,13 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.tpi.wasterecognition.databinding.ActivityPredictBinding
+import android.content.Intent
 
 class PredictActivity : AppCompatActivity() {
 
@@ -31,22 +29,8 @@ class PredictActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityPredictBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val initialPaddingBottom = binding.main.paddingBottom
-
-        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(
-                v.paddingLeft,
-                v.paddingTop,
-                v.paddingRight,
-                initialPaddingBottom + systemBars.bottom
-            )
-            insets
-        }
 
         binding.btnInput.setOnClickListener {
             openGallery()
@@ -59,6 +43,11 @@ class PredictActivity : AppCompatActivity() {
 
         binding.btnWrong.setOnClickListener {
             showChooseLabelDialog()
+        }
+
+        binding.btnTempGoToTraining.setOnClickListener {
+            val intent = Intent(this, TrainingActivity::class.java)
+            startActivity(intent)
         }
     }
 

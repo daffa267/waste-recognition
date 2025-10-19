@@ -40,6 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="Model Statistic :"
+            android:textStyle="bold"
             android:textColor="@color/text_secondary"
             android:textSize="16sp" />
 
@@ -55,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="2"
-                android:paddingHorizontal="16dp"
+                android:paddingHorizontal="48dp"
                 android:paddingVertical="12dp">
 
                 <LinearLayout
@@ -69,13 +70,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Accuracy :"
+                        android:textStyle="bold"
                         android:textColor="@color/text_secondary"
                         android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="80%"
+                        android:text="50%"
                         android:textColor="@color/text_primary"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -92,6 +94,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Loss :"
+                        android:textStyle="bold"
                         android:textColor="@color/text_secondary"
                         android:textSize="14sp" />
 
@@ -115,6 +118,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Arch :"
+                        android:textStyle="bold"
                         android:textColor="@color/text_secondary"
                         android:textSize="14sp" />
 
@@ -138,6 +142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Last training :"
+                        android:textStyle="bold"
                         android:textColor="@color/text_secondary"
                         android:textSize="14sp" />
 
@@ -173,7 +178,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="55dp"
         android:layout_alignParentBottom="true"
         android:background="@color/app_background"
         app:itemIconSize="30dp"

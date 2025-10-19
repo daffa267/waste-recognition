@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WasteRecognition">
+
         <activity
             android:name=".PredictActivity"
             android:exported="false" />
@@ -23,6 +24,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".TrainingActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
