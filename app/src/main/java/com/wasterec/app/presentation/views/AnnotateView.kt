@@ -41,7 +41,7 @@ import com.wasterec.app.ui.theme.Typography
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import android.graphics.ImageDecoder as AndroidImageDecoder
-
+//apa
 @Composable
 fun AnnotateView(
     context: Context,
