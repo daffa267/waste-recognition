@@ -1,12 +1,3 @@
 <resources>
-    <string name="app_name">Waste Recognition</string>
-
-        <string-array name="waste_labels">
-            <item>Logam</item>
-            <item>Plastik</item>
-            <item>Kaca</item>
-            <item>Kertas</item>
-            <item>Organik</item>
-            <item>Lainnya</item>
-        </string-array>
+    <string name="app_name">Waste Rect</string>
 </resources>
