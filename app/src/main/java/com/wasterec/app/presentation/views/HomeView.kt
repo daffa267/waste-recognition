@@ -49,7 +49,7 @@ fun HomeView(
             contentDescription = "Waste Rec Logo",
             modifier = Modifier
                 .padding(top = 32.dp)
-                .size(90.dp),
+                .size(100.dp),
             colorFilter = ColorFilter.tint(medium_teal)
         )
 
