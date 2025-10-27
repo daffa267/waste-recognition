@@ -325,7 +325,6 @@ fun AnnotateView(
             }
         }
 
-        Spacer(Modifier.height(34.dp))
 
         Button(
             onClick = {
@@ -344,7 +343,6 @@ fun AnnotateView(
                 fontWeight = FontWeight.Bold
             )
         }
-
         Spacer(Modifier.height(24.dp))
     }
 }
