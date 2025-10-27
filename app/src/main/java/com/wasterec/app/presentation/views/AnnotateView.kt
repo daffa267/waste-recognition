@@ -67,6 +67,9 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.ui.window.DialogProperties
 import com.wasterec.app.ui.theme.lightGray
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.windowInsetsPadding
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -110,12 +113,13 @@ fun AnnotateView(
         modifier = Modifier
             .fillMaxSize()
             .background(app_background)
+            .windowInsetsPadding(WindowInsets.safeDrawing)
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 24.dp)
-                .padding(top = 70.dp), // Padding atas diubah ke 40dp
+                .padding(top = 35.dp),
             horizontalArrangement = Arrangement.End,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -144,7 +148,7 @@ fun AnnotateView(
 
         Column(
             modifier = Modifier
-                .fillMaxSize()
+                .weight(1f)
                 .padding(24.dp)
                 .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -211,7 +215,7 @@ fun AnnotateView(
             Text(
                 text = predictResult ?: "...",
                 color = dark_teal,
-                fontSize = 22.sp,
+                fontSize = 26.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(top = 16.dp)
             )
@@ -224,7 +228,7 @@ fun AnnotateView(
             Text(
                 text = confidenceText,
                 color = Color.Black,
-                fontSize = 16.sp,
+                fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(top = 4.dp)
             )
@@ -319,25 +323,29 @@ fun AnnotateView(
                     Text("Wrong", fontSize = 16.sp, color = Color.White, fontWeight = FontWeight.Bold)
                 }
             }
-
-            Spacer(Modifier.height(34.dp))
-
-            Button(
-                onClick = {
-                    navController.navigate(route = Destination.Training)
-                },
-                shape = RoundedCornerShape(12.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = medium_teal),
-                modifier = Modifier.fillMaxWidth()
-                           .height(50.dp)
-            ) {
-                Text(
-                    text = "Next",
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Bold
-                )
-            }
         }
+
+        Spacer(Modifier.height(34.dp))
+
+        Button(
+            onClick = {
+                navController.navigate(route = Destination.Training)
+            },
+            shape = RoundedCornerShape(12.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = medium_teal),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp)
+                .padding(horizontal = 24.dp)
+        ) {
+            Text(
+                text = "Next",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold
+            )
+        }
+
+        Spacer(Modifier.height(24.dp))
     }
 }
 

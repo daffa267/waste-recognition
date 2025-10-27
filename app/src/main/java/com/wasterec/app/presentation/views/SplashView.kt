@@ -22,7 +22,7 @@ fun SplashView(){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Box(modifier = Modifier.size(150.dp)) {
-            GifLoader(R.drawable.network)
+            GifLoader(R.drawable.splash)
         }
     }
 }
