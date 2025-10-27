@@ -19,39 +19,56 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.wasterec.app.R
 import com.wasterec.app.model.Destination
-import com.wasterec.app.presentation.components.MyButton
 import com.wasterec.app.ui.theme.Typography
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.sp
+import com.wasterec.app.presentation.components.GifLoader
+import com.wasterec.app.ui.theme.app_background
+import com.wasterec.app.ui.theme.medium_teal
+import com.wasterec.app.ui.theme.text_primary
 
 @Composable
 fun FinishTrainingView(
     navController: NavHostController
 ){
     Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .background(app_background)
+            .windowInsetsPadding(WindowInsets.safeDrawing)
+            .padding(24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ){
-        Spacer(Modifier.weight(1f))
+        Column(
+            modifier = Modifier.weight(1f),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                "Training Finished",
+                fontSize = 28.sp,
+                fontWeight = FontWeight.Bold,
+                color = text_primary
+            )
 
+            Spacer(Modifier.height(48.dp))
 
+            Box(modifier = Modifier.size(125.dp)) {
+                GifLoader(R.drawable.done)
+            }
+        }
 
-
-        Text(
-            "Training Finished",
-            fontSize = Typography.titleLarge.fontSize,
-            fontWeight = FontWeight.Bold
-        )
-
-
-        Image(
-            painter = painterResource(R.drawable.cloud),
-            "Cloud"
-        )
-
-        Spacer(Modifier.weight(1f))
-
-
-        MyButton(
+        Button(
             onClick = {
                 navController.navigate(Destination.Home) {
                     popUpTo(navController.graph.startDestinationId) {
@@ -59,13 +76,21 @@ fun FinishTrainingView(
                     }
                     launchSingleTop = true
                 }
-
             },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(all = 20.dp)
+                .height(50.dp),
+            shape = RoundedCornerShape(12.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = medium_teal,
+                contentColor = Color.White
+            )
         ) {
-            Text("Back")
+            Text(
+                "Back",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold
+            )
         }
     }
 }
@@ -76,3 +101,4 @@ fun FinishTrainingView(
 fun Finish(){
     FinishTrainingView(rememberNavController())
 }
+

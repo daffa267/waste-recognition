@@ -320,15 +320,16 @@ fun AnnotateView(
                 }
             }
 
-            Spacer(Modifier.height(32.dp))
+            Spacer(Modifier.height(34.dp))
 
             Button(
                 onClick = {
                     navController.navigate(route = Destination.Training)
                 },
-                shape = RoundedCornerShape(8.dp),
+                shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = medium_teal),
                 modifier = Modifier.fillMaxWidth()
+                           .height(50.dp)
             ) {
                 Text(
                     text = "Next",
@@ -336,8 +337,6 @@ fun AnnotateView(
                     fontWeight = FontWeight.Bold
                 )
             }
-
-            Spacer(Modifier.height(24.dp))
         }
     }
 }
@@ -354,10 +353,10 @@ fun CorrectLabelDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(text = "Choose Correct Label") },
+        title = { Text(text = "Choose Correct Label!") },
         text = {
             Column {
-                Spacer(Modifier.height(16.dp))
+                Spacer(Modifier.height(12.dp))
                 ExposedDropdownMenuBox(
                     expanded = expanded,
                     onExpandedChange = { expanded = !expanded }

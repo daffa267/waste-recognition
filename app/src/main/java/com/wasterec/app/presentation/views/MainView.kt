@@ -40,7 +40,7 @@ fun MainView(
 ){
     val entries = arrayOf(
         Menu("Home", Home, R.drawable.baseline_home_24),
-        Menu("Info", Info, R.drawable.baseline_add_location_24)
+        Menu("Info", Info, R.drawable.info_ic)
     )
 
     var selectedTab by remember { mutableIntStateOf(0) }

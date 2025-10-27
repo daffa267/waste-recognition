@@ -50,7 +50,7 @@ fun HomeView(
             modifier = Modifier
                 .padding(top = 32.dp)
                 .size(90.dp),
-            colorFilter = ColorFilter.tint(dark_teal)
+            colorFilter = ColorFilter.tint(medium_teal)
         )
 
         Text(
@@ -87,12 +87,12 @@ fun HomeView(
                     .padding(horizontal = 48.dp, vertical = (12.dp - 8.dp))
             ) {
                 Row(modifier = Modifier.fillMaxWidth()) {
-                    StatisticItem("Accuracy :", "50%", Modifier.weight(1f))
-                    StatisticItem("Loss :", "0.15", Modifier.weight(1f))
+                    StatisticItem("Accuracy :", "50%", Modifier.weight(2f))
+                    StatisticItem("Loss :", "0.15", Modifier.weight(2f))
                 }
                 Row(modifier = Modifier.fillMaxWidth()) {
-                    StatisticItem("Arch :", "ResNet-18", Modifier.weight(1f))
-                    StatisticItem("Last training :", "21 Okt 2025", Modifier.weight(1f))
+                    StatisticItem("Arch :", "ResNet-18", Modifier.weight(2f))
+                    StatisticItem("Last training :", "21 Okt 2025", Modifier.weight(2f))
                 }
             }
         }
